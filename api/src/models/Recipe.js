@@ -19,7 +19,7 @@ module.exports = (sequelize) => {
       isURL: true,
     },
     sumary: {
-      type: DataTransfer.STRING,
+      type: DataTypes.STRING,
       allowNull: false,
     },
     healthScore: {
@@ -27,7 +27,7 @@ module.exports = (sequelize) => {
       allowNull: false,
     },
     stepToStep: {
-      type: DataTypes.ARRAY,
+      type: DataTypes.ARRAY(DataTypes.STRING),
       allowNull: false,
     },
     createdByDB: {
@@ -35,5 +35,6 @@ module.exports = (sequelize) => {
       defaultValue: true,
       allowNull: false,
     },
-  });
+  },
+  {timestamps: false});
 };
