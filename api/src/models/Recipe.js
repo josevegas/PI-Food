@@ -18,7 +18,7 @@ module.exports = (sequelize) => {
       allowNull: false,
       isURL: true,
     },
-    sumary: {
+    summary: {
       type: DataTypes.STRING,
       allowNull: false,
     },
