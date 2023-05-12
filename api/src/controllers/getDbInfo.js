@@ -1,3 +1,4 @@
+const {Recipe, Diets}=require('../db.js')
 //DB information
 const getDbInfo= async()=>{
     return await Recipe.findAll({

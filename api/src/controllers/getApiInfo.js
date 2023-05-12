@@ -1,21 +1,18 @@
 require('dotenv').config();
-const {API_KEY}= process.env;
+const {YOUR_API_KEY}= process.env;
 const axios=require('axios');
 //API information
-const getApiInfo= async()=>{
-    const apiUrl= await axios.get(`https://api.spoonacular.com/recipes/complexSearch?apiKey=${API_KEY}&addRecipeInformation=true`);
-    const apiInfo= await apiUrl.data.map(ele=>{
+const getApiInfo= async ()=>{
+    // const apiUrl= await axios.get(`https://api.spoonacular.com/recipes/complexSearch?apiKey=${YOUR_API_KEY}`);
+    const apiUrl= await axios.get(`https://rickandmortyapi.com/api/character`);
+    const apiInfo= await apiUrl.data.map(ch=>{
         return {
-            id: ele.id,
-            name: ele.title,
-            image: ele.image,
-            summary: ele.summary,
-            healthScore: ele.healthScore,
-            stepToStep: ele.analyzedInstructions.steps.map(ele=>ele.step),
-            diets: ele.diets.map(ele=>ele),
-        };
+            id: ch.id,
+            name: ch.name,
+            img: ch.image,
+        }
     });
-    return apiInfo;
-};
+
+}
 
 module.exports= getApiInfo;
