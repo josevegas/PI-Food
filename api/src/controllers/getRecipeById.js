@@ -8,16 +8,19 @@ const getRecipeById=async (req, res)=>{
     if(idRecipe){
         const apiUrl=await axios.get(`https://api.spoonacular.com/recipes/${idRecipe}/information?apiKey=${YOUR_API_KEY}`);
         let infoId= await apiUrl.data;
-        const recipeId={
-            id: infoId.id,
-            name: infoId.title,
-            summary: infoId.summary,
-            healthScore: infoId.healthScore,
-            stepToStep: infoId.analyzedInstructions.steps,
+        if(infoId.hasOwnProperty('healthScore')){
+            let infoStep;
+            if(Object.entries(infoId.analyzedInstructions).length){infoStep=infoId.analyzedInstructions[0].steps.map(st=>st.step)}else{infoStep=[]}
+            const recipeId={
+                id: infoId.id,
+                name: infoId.title,
+                summary: infoId.summary,
+                healthScore: infoId.healthScore,
+                stepToStep: infoStep,
+            };
+            res.status(200).json(recipeId);
         }
-        //recipeId.length?
-        res.status(200).json(recipeId);
-        //res.status(404).json({message: `Receta ${idRecipe} no encontrada, ${recipeId.length}`});
+        res.status(404).json({message: `Receta no encontrada.${Object.entries(infoId).length}`});
     }
 }
 
