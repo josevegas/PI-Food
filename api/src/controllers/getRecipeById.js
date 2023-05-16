@@ -1,4 +1,3 @@
-const getAllRecipes=require('./getAllRecipes');
 require('dotenv').config();
 const {YOUR_API_KEY}= process.env;
 const axios=require('axios')
@@ -17,6 +16,7 @@ const getRecipeById=async (req, res)=>{
                 summary: infoId.summary,
                 healthScore: infoId.healthScore,
                 stepToStep: infoStep,
+                diets: infoId.diets,
             };
             res.status(200).json(recipeId);
         }
