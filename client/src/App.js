@@ -1,4 +1,7 @@
 import './App.css';
+import { useEffect, useState } from "react";
+import { Routes, Route, useLocation, useNavigate } from "react-router-dom";
+import LandingPage from './components/landingpage/LandingPage';
 
 function App() {
   return (
