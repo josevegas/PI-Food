@@ -1,0 +1,12 @@
+@import url('https://fonts.googleapis.com/css2?family=Aclonica&family=Akronim&family=Dancing+Script:wght@700&family=Capriola&family=Merienda:wght@700&display=swap');
+.Content{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: whitesmoke;
+    background-color: rgba(0, 0, 0, 0.801);
+    border-radius: 10px;
+    width: 40%;
+    margin: 5px;
+    padding-bottom: 10px;
+}

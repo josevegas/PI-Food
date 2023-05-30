@@ -11,6 +11,7 @@ const getApiInfo= async ()=>{
         return{
             id: re.id,
             name: re.title,
+            image: re.image,
             summary: re.summary,
             healthScore: re.healthScore,
             steps: infoStep,

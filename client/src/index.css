@@ -1,5 +1,7 @@
 body {
-  /* background: ; */
+  background: url(./image/making-cakes-cookies-pastries-doodle-confectionery-tools-dough-mixer-baking-pan-pastry.avif);
+  background-size: contain;
+  background-attachment: fixed;
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',

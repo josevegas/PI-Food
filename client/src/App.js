@@ -1,16 +1,19 @@
 import './App.css';
 import { useEffect, useState } from "react";
-import { Routes, Route, useLocation, useNavigate } from "react-router-dom";
+import { BrowserRouter, Route, useLocation, useNavigate } from "react-router-dom";
 import LandingPage from './components/landingpage/LandingPage';
+import Home from './components/homepage/HomePage';
 
 function App() {
   return (
-    <div className="App">
-      <h1>Henry Food</h1>
-      <Routes>
-        
-      </Routes>
-    </div>
+    <BrowserRouter>
+      <div className="App">
+        <switch>
+          <Route exact path='/' component={LandingPage}/>
+          <Route path='/home' component={Home}/>
+        </switch>
+      </div>
+    </BrowserRouter>
   );
 }
 
