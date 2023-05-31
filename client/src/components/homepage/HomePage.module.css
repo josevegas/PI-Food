@@ -60,5 +60,11 @@
 .Content{
     display: flex;
     flex-direction: row;
+    justify-content: center;
+}
+.paginado{
+    background-color: #ffffffcc;
+    display: flex;
+    flex-direction: row;
     justify-content: space-between;
 }

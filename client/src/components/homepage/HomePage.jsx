@@ -5,10 +5,19 @@ import { useDispatch, useSelector } from 'react-redux';
 import {getRecipes} from '../../actions';
 import {Link} from 'react-router-dom'
 import Recipe from '../recipe/Recipe';
+import Paginado from '../Paginado';
 
 export default function Home(){
     const dispatch= useDispatch();
-    const allRecipes=useSelector((state)=>state.recipes)
+    const allRecipes= useSelector((state)=>state.recipes);
+    const [currentPage,setCurrentPage]=useState(1);
+    const [recipesPerPage,setRecipesPerPage]=useState(9);
+    const indexCut= currentPage * recipesPerPage;
+    const indexFirstRecipe= indexCut - recipesPerPage;
+    const currentRecipes= allRecipes.slice(indexFirstRecipe,indexCut);
+    const paginado=(pageNumber)=>{
+        setCurrentPage(pageNumber);
+    };
     useEffect(()=>{
         dispatch(getRecipes())
     },[dispatch])
@@ -65,8 +74,9 @@ export default function Home(){
                     </div>
                 </div>
                 <div>
+                    <Paginado recipesPerPage={recipesPerPage} allRecipes={allRecipes.length} paginado={paginado} />
                     {
-                        allRecipes?.map(re=>{
+                        currentRecipes?.map(re=>{
                             return (
                                 <Fragment>
                                     <Link to={'/home/'+re.id}>
