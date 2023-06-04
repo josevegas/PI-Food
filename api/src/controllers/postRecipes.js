@@ -18,7 +18,9 @@ const postRecipes= async (req,res)=>{
         stepToStep,
         createByDb,
     })
-    let dietsDb= await Diets.findAll({where: {name:diets}});
+    let dietsDb= await Diets.findAll({
+        where: {name:diets}
+    });
     recipeCreate.addDiets(dietsDb);
     res.status(201).json({message:'Receta creada con éxito.'})
 };

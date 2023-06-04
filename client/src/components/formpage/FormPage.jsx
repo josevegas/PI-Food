@@ -30,7 +30,7 @@ export default function FormPage(){
         })
     }
     const handleTextArea=(e)=>{
-        let arr=e.target.value.split(',')
+        let arr=e.target.value.split('.')
         setInput({
             ...input,
             stepToStep: arr,
@@ -50,7 +50,7 @@ export default function FormPage(){
             stepToStep: [],
             diets: [],
         });
-        // history.push('/home');
+        history.push('/home');
     }
     useEffect(()=>{
         dispatch(getDiets());
