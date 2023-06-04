@@ -1,0 +1,19 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Capriola&family=Merienda:wght@700&display=swap');
+.nameDetail{
+    background-color: #ffffffcc;
+    border-radius: 10px;
+    font-family: 'Dancing Script', cursive, bold;
+    font-size: 54px;
+}
+.H3Detail{
+    background-color: black;
+    color:whitesmoke;
+    box-shadow: 1px 1px 10px 10px #37e69d99;
+}
+.H2Detail{
+    background-color: black;
+    color: whitesmoke;
+    font-family: 'Merienda', cursive;
+    font-size: 14px;
+    border-radius: 10px;
+}

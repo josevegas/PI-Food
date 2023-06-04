@@ -60,3 +60,16 @@ export function postRecipes(payload){
         var json=await axios.post('http://localhost:3001/recipes',payload);
     }
 }
+export function getDetails(id){
+    return async function(dispatch){
+        try{
+            var json= await axios.get(`http://localhost:3001/recipes/${id}`)
+            return dispatch({
+                type: 'GET_DETAILS',
+                payload: json,
+            })
+        }catch(error){
+            console.log(error)
+        }
+    }
+}
