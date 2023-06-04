@@ -4,6 +4,7 @@ import { filterRecipesByOrigin } from "../actions";
 const initialState={
     recipes: [],
     allRecipes: [],
+    diets: [],
 }
 function rootReducer(state=initialState,action){
     switch(action.type){
@@ -73,6 +74,23 @@ function rootReducer(state=initialState,action){
             return{
                 ... state,
                 recipes: recipesId,
+            };
+        break;
+        case 'RECIPES_BY_NAME':
+            return{
+                ... state,
+                recipes: action.payload,
+            };
+        break;
+        case 'POST_RECIPE':
+            return{
+                ... state,
+            };
+        break;
+        case 'GET_DIETS':
+            return{
+                ... state,
+                diets: action.payload,
             };
         break;
         default: return state;

@@ -63,8 +63,30 @@
     justify-content: center;
 }
 .paginado{
-    background-color: #ffffffcc;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
+    margin: 20px 0;
+}
+.paginado ul{
+    list-style: none;
+    text-align: center;
+}
+.paginado ul li{
+    display: inline-block;
+    margin-right: 10px;
+}
+.paginado ul li a{
+    display: block;
+    padding: 10px 20px;
+    color: whitesmoke;
+    background-color: black;
+    text-decoration: none;
+    border-radius: 5px;
+}
+.paginado ul li a:hover{
+    transform: scale(0.95);
+    box-shadow: 1px 1px 10px 10px #37e69d99;
+}
+.active{
+    transform: scale(0.95);
+    box-shadow: 1px 1px 10px 10px #37e69d99;
+    font-weight: bold;
 }

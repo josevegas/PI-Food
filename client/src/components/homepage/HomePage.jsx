@@ -6,6 +6,7 @@ import {filterRecipesByDiet, filterRecipesByOrigin, getRecipes, orderById, order
 import {Link} from 'react-router-dom'
 import Recipe from '../recipe/Recipe';
 import Paginado from '../Paginado';
+import SearchBar from '../searchbar/SearchBar';
 
 export default function Home(){
     const dispatch= useDispatch();
@@ -28,9 +29,11 @@ export default function Home(){
     }
     function handleFilterRecipesDiet(e){
         dispatch(filterRecipesByDiet(e.target.value))
+        setCurrentPage(1);
     }
     function handleFilterRecipesOrigin(e){
         dispatch(filterRecipesByOrigin(e.target.value))
+        setCurrentPage(1);
     }
     function handleOrderByName(e){
         e.preventDefault();
@@ -93,7 +96,8 @@ export default function Home(){
                     </div>
                 </div>
                 <div>
-                    <Paginado recipesPerPage={recipesPerPage} allRecipes={allRecipes.length} paginado={paginado} />
+                    <Paginado recipesPerPage={recipesPerPage} allRecipes={allRecipes.length} paginado={paginado} currentPage={currentPage} />
+                    <SearchBar />
                     {
                         currentRecipes?.map(re=>{
                             return (
