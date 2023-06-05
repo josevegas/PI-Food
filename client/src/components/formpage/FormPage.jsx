@@ -4,6 +4,7 @@ import { Link, useHistory } from "react-router-dom";
 import {postRecipes,getDiets} from "../../actions/index";
 import { useDispatch,useSelector } from "react-redux";
 import { validation } from "./validation";
+import style from './FormPage.module.css';
 
 export default function FormPage(){
     const dispatch=useDispatch();
@@ -69,52 +70,52 @@ export default function FormPage(){
     return(
         <div>
             <Link to="/home"><button>Volver</button></Link>
-            <h1>¡Crea tu receta!</h1>
+            <h1 className={style.H1FP}>¡Crea tu receta!</h1>
             <form onSubmit={(e)=>handleSubmit(e)}>
-                <div>
-                    <label>Nombre</label>
+                <div className={style.DivFP}>
+                    <label className={style.LabelFP}>Nombre</label>
                     <input type='text' value={input.name} name='name' onChange={handleChange} />
                     {errors.name?(
-                        <p>{errors.name}</p>
+                        <p className={style.PFP}>{errors.name}</p>
                     ):null}
                 </div>
-                <div>
-                    <label>Resumen de la Receta</label>
+                <div className={style.DivFP}>
+                    <label className={style.LabelFP}>Resumen de la Receta</label>
                     <input type='text' value={input.summary} name='summary' onChange={handleChange} />
                     {errors.summary?(
-                        <p>{errors.summary}</p>
+                        <p className={style.PFP}>{errors.summary}</p>
                     ):null}
                 </div>
-                <div>
-                    <label>Score Saludable</label>
+                <div className={style.DivFP}>
+                    <label className={style.LabelFP}>Score Saludable</label>
                     <input type='number' value={input.healthScore} name='healthScore' onChange={handleChange} />
                     {errors.healthScore?(
-                        <p>{errors.healthScore}</p>
+                        <p className={style.PFP}>{errors.healthScore}</p>
                     ):null}
                 </div>
-                <div>
-                    <label>Imagen</label>
+                <div className={style.DivFP}>
+                    <label className={style.LabelFP}>Imagen</label>
                     <input type='text' value={input.image} name='image' onChange={handleChange} />
                     {errors.image?(
-                        <p>{errors.image}</p>
+                        <p className={style.PFP}>{errors.image}</p>
                     ):null}
                 </div>
-                <div>
-                    <label>Tipo de Dietas</label>
+                <div className={style.DivFP}>
+                    <label className={style.LabelFP}>Tipo de Dietas</label>
                     <div>
                         {diets.map(di=>{
                             return(<label><input type='checkbox' name={di.name} value={di.name} onChange={e=>handleCheck(e)}/>{di.name}</label>)
                         })}
                     </div>
                 </div>
-                <div>
-                    <label>Instrucciones</label>
+                <div className={style.DivFP}>
+                    <label className={style.LabelFP}>Instrucciones</label>
                     <textarea type='text' value={input.stepToStep} name='stepToStep' onChange={(e)=>handleTextArea(e)} />
                     {errors.stepToStep?(
-                        <p>{errors.stepToStep}</p>
+                        <p className={style.PFP}>{errors.stepToStep}</p>
                     ):null}
                 </div>
-                <button type='submit'>Crear Receta</button>
+                <button type='submit' className={style.ButtonFP}>Crear Receta</button>
             </form>
         </div>
     )

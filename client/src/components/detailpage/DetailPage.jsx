@@ -39,7 +39,7 @@ export default function Details(props){
                     </ul>
                 </div>:<p>Loading...</p>
             }
-            <Link to='/home'><button>Retornar</button></Link>
+            <Link to='/home'><button className={style.ButtonDetail}>Retornar</button></Link>
         </div>
     )
 }

@@ -1,0 +1,50 @@
+@import url('https://fonts.googleapis.com/css2?family=Aclonica&family=Akronim&family=Dancing+Script:wght@700&family=Capriola&family=Merienda:wght@700&display=swap');
+.H1FP{
+    background-color: #ffffffcc;
+    font-family: 'Dancing Script', cursive, bold;
+    font-size: 54px;
+    margin-left: 15%;
+    padding: 5px;
+    text-align: center;
+    border-radius: 15px;
+}
+.ButtonFP{
+    background-color: black;
+    color: whitesmoke;
+    font-family: 'Merienda', cursive;
+    font-size: 14px;
+    border-radius: 10px;
+    padding: 10px;
+    margin-top: 0;
+}
+.ButtonFP:hover{
+    transform: scale(0.95);
+    box-shadow: 1px 1px 10px 10px #37e69d99;
+}
+.LabelFP{
+    color: whitesmoke;
+    font-family: 'Merienda', cursive;
+    font-size: 14px;
+    border-radius: 10px;
+    padding: 2px;
+    margin-top: 15px;
+}
+.DivFP{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 40%;
+    height: 50%;
+    margin: 5px 5px 10px 5px;
+    background-color: black;
+    padding-bottom: 10px;
+    border-radius: 10px;
+}
+.PFP{
+    color: yellow;
+    font-family: 'Merienda', cursive;
+    font-size: 14px;
+    border-radius: 10px;
+    padding: 2px;
+    margin-top: 15px
+}

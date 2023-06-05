@@ -98,6 +98,7 @@ export default function Home(){
                 <div>
                     <Paginado recipesPerPage={recipesPerPage} allRecipes={allRecipes.length} paginado={paginado} currentPage={currentPage} />
                     <SearchBar />
+                    <div  className={styles.FragmentHome}>
                     {
                         currentRecipes?.map(re=>{
                             return (
@@ -109,6 +110,7 @@ export default function Home(){
                             )
                         })
                     }
+                    </div>
                 </div>
             </div>
         </div>

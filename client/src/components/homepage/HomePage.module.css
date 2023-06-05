@@ -90,3 +90,13 @@
     box-shadow: 1px 1px 10px 10px #37e69d99;
     font-weight: bold;
 }
+.FragmentHome{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 80vw;
+    height: 80vh;
+    border: none;
+}

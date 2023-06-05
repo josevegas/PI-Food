@@ -8,6 +8,7 @@
 .H3Detail{
     background-color: black;
     color:whitesmoke;
+    font-family: 'Dancing Script', cursive, bold;
     box-shadow: 1px 1px 10px 10px #37e69d99;
 }
 .H2Detail{
@@ -20,5 +21,19 @@
 .PDetail{
     background-color: black;
     color: whitesmoke;
-    
+    font-family: 'Capriola', sans-serif;
+    font-size: 14;
+}
+.ButtonDetail{
+    background-color: black;
+    color: whitesmoke;
+    font-family: 'Merienda', cursive;
+    font-size: 14px;
+    border-radius: 10px;
+    padding: 10px;
+    margin-top: 0;
+}
+.ButtonDetail:hover{
+    transform: scale(0.95);
+    box-shadow: 1px 1px 10px 10px #37e69d99;
 }
