@@ -18,7 +18,7 @@ function rootReducer(state=initialState,action){
         break;
         case 'FILTER_BY_DIET':
             const recipesDietApi= action.payload==='all'? state.allRecipes : state.allRecipes.filter(re=>re.diets.includes(action.payload));
-            const recipeDietDb=action.payload!='all'? state.allRecipes.filter(re=>re.diets.includes({name:action.payload})):[];
+            const recipeDietDb=action.payload==='all'? []: state.allRecipes.filter(re=>re.diets.includes({'name':action.payload}));
             return{
                 ... state,
                 recipes: recipesDietApi.concat(recipeDietDb),
