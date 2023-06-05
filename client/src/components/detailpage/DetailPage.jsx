@@ -3,14 +3,14 @@ import { Link } from 'react-router-dom';
 import { useEffect } from 'react';
 import { useDispatch,useSelector } from 'react-redux';
 import { getDetails } from '../../actions';
-import { useParams } from "react-router-dom";
+// import { useParams } from "react-router-dom";
 import style from './DetailPage.module.css';
 
 export default function Details(props){
     const dispatch=useDispatch();
-    const {id}=useParams();
+    // const {id}=useParams();
     useEffect(()=>{
-        dispatch(getDetails(id));
+        dispatch(getDetails(props.match.params.id));
     },[dispatch]);
     const myRecipe=useSelector((state)=>state.details)
     return(
