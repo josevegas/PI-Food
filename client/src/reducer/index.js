@@ -95,12 +95,6 @@ function rootReducer(state=initialState,action){
                 diets: action.payload,
             };
         break;
-        case 'GET_DETAILS':
-            return{
-                ...state,
-                details: action.payload,
-            };
-        break;
         default: return state;
     }
 }
