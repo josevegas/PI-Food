@@ -4,7 +4,7 @@ import { BrowserRouter, Route, useLocation, useNavigate } from "react-router-dom
 import LandingPage from './components/landingpage/LandingPage';
 import Home from './components/homepage/HomePage';
 import FormPage from './components/formpage/FormPage';
-import DetailPage from './components/detailpage/DetailPage';
+import Details from './components/detailpage/DetailPage';
 
 function App() {
   return (
@@ -14,7 +14,7 @@ function App() {
           <Route exact path='/' component={LandingPage}/>
           <Route path='/home' component={Home}/>
           <Route path='/recipes' component={FormPage}/>
-          <Route path='/detail/:id' component={DetailPage}/>
+          <Route path='/detail/:id' component={Details}/>
         </switch>
       </div>
     </BrowserRouter>

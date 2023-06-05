@@ -25,7 +25,7 @@ function rootReducer(state=initialState,action){
             };
         break;
         case 'FILTER_BY_ORIGIN':
-            const recipesOrigin=action.payload==='created'? state.allRecipes.filter(re=>re.createdInDb):state.allRecipes.filter(re=>!re.createdInDb)
+            const recipesOrigin=action.payload==='created'? state.allRecipes.filter(re=>re.createdByDB):state.allRecipes.filter(re=>!re.createdByDB)
             
             return{
                 ... state,
@@ -93,6 +93,12 @@ function rootReducer(state=initialState,action){
             return{
                 ... state,
                 diets: action.payload,
+            };
+        break;
+        case 'GET_DETAILS':
+            return{
+                ...state,
+                details: action.payload,
             };
         break;
         default: return state;
