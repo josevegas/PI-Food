@@ -7,7 +7,7 @@ const getRecipeById=async (req, res)=>{
     const {idRecipe}=req.params;
     if(idRecipe){
         let infoId= await getAllRecipes();
-        const recipeId= await infoId.filter(re=>re.id==id);
+        const recipeId= await infoId.filter(re=>re.id==idRecipe);
         res.status(200).json(recipeId);
         res.status(404).json({message: `Receta no encontrada.${Object.entries(infoId).length}`});
     }

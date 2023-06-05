@@ -102,7 +102,7 @@ export default function Home(){
                         currentRecipes?.map(re=>{
                             return (
                                 <Fragment>
-                                    <Link to={'/home/'+re.id}>
+                                    <Link to={'/detail/'+re.id}>
                                         <Recipe name={re.name} image={re.image} diets={re.diets} key={re.id}/>
                                     </Link>
                                 </Fragment>
