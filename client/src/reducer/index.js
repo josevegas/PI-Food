@@ -17,15 +17,15 @@ function rootReducer(state=initialState,action){
             };
         break;
         case 'FILTER_BY_DIET':
-            const recipesDietApi= action.payload==='all'? state.allRecipes : state.allRecipes.filter(re=>re.diets.includes(action.payload));
-            const recipeDietDb=action.payload==='all'? []: state.allRecipes.filter(re=>re.diets.includes({'name':action.payload}));
+            const recipesDietApi= action.payload==='all'? state.allRecipes : state.recipes.filter(re=>re.diets.includes(action.payload));
+            const recipeDietDb=action.payload==='all'? []: state.recipes.filter(re=>re.diets.includes({'name':action.payload}));
             return{
                 ... state,
                 recipes: recipesDietApi.concat(recipeDietDb),
             };
         break;
         case 'FILTER_BY_ORIGIN':
-            const recipesOrigin=action.payload==='created'? state.allRecipes.filter(re=>re.createdByDB):state.allRecipes.filter(re=>!re.createdByDB)
+            const recipesOrigin=action.payload==='created'? state.recipes.filter(re=>re.createdByDB):state.recipes.filter(re=>!re.createdByDB)
             
             return{
                 ... state,
